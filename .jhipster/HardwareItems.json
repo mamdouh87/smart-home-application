@@ -1,0 +1,36 @@
+{
+  "applications": "*",
+  "changelogDate": "20220623175122",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "hardware_items",
+  "fields": [
+    {
+      "fieldName": "hardwareDescAr",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hardwareDescEn",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "supportedQty",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "HardwareItems",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "requirementItem",
+      "otherEntityRelationshipName": "hardwareItems",
+      "ownerSide": true,
+      "relationshipName": "item",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

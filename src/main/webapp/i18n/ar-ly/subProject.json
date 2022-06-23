@@ -1,0 +1,29 @@
+{
+  "smartHomeApplicationApp": {
+    "subProject": {
+      "home": {
+        "title": "Sub Projects",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Sub Project",
+        "createOrEditLabel": "Create or edit a Sub Project",
+        "notFound": "No Sub Projects found"
+      },
+      "created": "A new Sub Project is created with identifier {{ param }}",
+      "updated": "A Sub Project is updated with identifier {{ param }}",
+      "deleted": "A Sub Project is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sub Project {{ id }}?"
+      },
+      "detail": {
+        "title": "Sub Project"
+      },
+      "id": "ID",
+      "projectTemplateCode": "Project Template Code",
+      "projectTemplateNameAr": "Project Template Name Ar",
+      "projectTemplateNameEn": "Project Template Name En",
+      "subProjectAttrs": "Sub Project Attrs",
+      "subProjectItemsReq": "Sub Project Items Req",
+      "project": "Project"
+    }
+  }
+}

@@ -1,0 +1,108 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-sub-project-attr-template-heading"
+        data-cy="SubProjectAttrTemplateCreateUpdateHeading"
+        jhiTranslate="smartHomeApplicationApp.subProjectAttrTemplate.home.createOrEditLabel"
+      >
+        Create or edit a Sub Project Attr Template
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="smartHomeApplicationApp.subProjectAttrTemplate.attrCode" for="field_attrCode"
+            >Attr Code</label
+          >
+          <input type="text" class="form-control" name="attrCode" id="field_attrCode" data-cy="attrCode" formControlName="attrCode" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="smartHomeApplicationApp.subProjectAttrTemplate.attrCodeNameAr" for="field_attrCodeNameAr"
+            >Attr Code Name Ar</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="attrCodeNameAr"
+            id="field_attrCodeNameAr"
+            data-cy="attrCodeNameAr"
+            formControlName="attrCodeNameAr"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="smartHomeApplicationApp.subProjectAttrTemplate.attrCodeNameEn" for="field_attrCodeNameEn"
+            >Attr Code Name En</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="attrCodeNameEn"
+            id="field_attrCodeNameEn"
+            data-cy="attrCodeNameEn"
+            formControlName="attrCodeNameEn"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="smartHomeApplicationApp.subProjectAttrTemplate.attrType" for="field_attrType"
+            >Attr Type</label
+          >
+          <input type="text" class="form-control" name="attrType" id="field_attrType" data-cy="attrType" formControlName="attrType" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="smartHomeApplicationApp.subProjectAttrTemplate.subProjectTemplate"
+            for="field_subProjectTemplate"
+            >Sub Project Template</label
+          >
+          <select
+            class="form-control"
+            id="field_subProjectTemplate"
+            data-cy="subProjectTemplate"
+            name="subProjectTemplate"
+            formControlName="subProjectTemplate"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                subProjectTemplateOption.id === editForm.get('subProjectTemplate')!.value?.id
+                  ? editForm.get('subProjectTemplate')!.value
+                  : subProjectTemplateOption
+              "
+              *ngFor="let subProjectTemplateOption of subProjectTemplatesSharedCollection; trackBy: trackSubProjectTemplateById"
+            >
+              {{ subProjectTemplateOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+{
+  "smartHomeApplicationApp": {
+    "projectTemplate": {
+      "home": {
+        "title": "Project Templates",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Project Template",
+        "createOrEditLabel": "Create or edit a Project Template",
+        "notFound": "No Project Templates found"
+      },
+      "created": "A new Project Template is created with identifier {{ param }}",
+      "updated": "A Project Template is updated with identifier {{ param }}",
+      "deleted": "A Project Template is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Project Template {{ id }}?"
+      },
+      "detail": {
+        "title": "Project Template"
+      },
+      "id": "ID",
+      "projectTemplateCode": "Project Template Code",
+      "projectTemplateNameAr": "Project Template Name Ar",
+      "projectTemplateNameEn": "Project Template Name En",
+      "subProjectTemplate": "Sub Project Template"
+    }
+  }
+}

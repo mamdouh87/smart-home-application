@@ -1,0 +1,27 @@
+{
+  "smartHomeApplicationApp": {
+    "hardwareItems": {
+      "home": {
+        "title": "Hardware Items",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Hardware Items",
+        "createOrEditLabel": "Create or edit a Hardware Items",
+        "notFound": "No Hardware Items found"
+      },
+      "created": "A new Hardware Items is created with identifier {{ param }}",
+      "updated": "A Hardware Items is updated with identifier {{ param }}",
+      "deleted": "A Hardware Items is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Hardware Items {{ id }}?"
+      },
+      "detail": {
+        "title": "Hardware Items"
+      },
+      "id": "ID",
+      "hardwareDescAr": "Hardware Desc Ar",
+      "hardwareDescEn": "Hardware Desc En",
+      "supportedQty": "Supported Qty",
+      "item": "Item"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="buildingType">
+      <h2 data-cy="buildingTypeDetailsHeading">
+        <span jhiTranslate="smartHomeApplicationApp.buildingType.detail.title">Building Type</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ buildingType.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="smartHomeApplicationApp.buildingType.code">Code</span></dt>
+        <dd>
+          <span>{{ buildingType.code }}</span>
+        </dd>
+        <dt><span jhiTranslate="smartHomeApplicationApp.buildingType.nameAr">Name Ar</span></dt>
+        <dd>
+          <span>{{ buildingType.nameAr }}</span>
+        </dd>
+        <dt><span jhiTranslate="smartHomeApplicationApp.buildingType.nameEn">Name En</span></dt>
+        <dd>
+          <span>{{ buildingType.nameEn }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/building-type', buildingType.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

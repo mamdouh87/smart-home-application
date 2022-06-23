@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="requirementItem">
+      <h2 data-cy="requirementItemDetailsHeading">
+        <span jhiTranslate="smartHomeApplicationApp.requirementItem.detail.title">Requirement Item</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ requirementItem.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="smartHomeApplicationApp.requirementItem.sysCode">Sys Code</span></dt>
+        <dd>
+          <span>{{ requirementItem.sysCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="smartHomeApplicationApp.requirementItem.code">Code</span></dt>
+        <dd>
+          <span>{{ requirementItem.code }}</span>
+        </dd>
+        <dt><span jhiTranslate="smartHomeApplicationApp.requirementItem.descriptionAr">Description Ar</span></dt>
+        <dd>
+          <span>{{ requirementItem.descriptionAr }}</span>
+        </dd>
+        <dt><span jhiTranslate="smartHomeApplicationApp.requirementItem.descriptionEn">Description En</span></dt>
+        <dd>
+          <span>{{ requirementItem.descriptionEn }}</span>
+        </dd>
+        <dt><span jhiTranslate="smartHomeApplicationApp.requirementItem.subProjectTemplate">Sub Project Template</span></dt>
+        <dd>
+          <div *ngIf="requirementItem.subProjectTemplate">
+            <a [routerLink]="['/sub-project-template', requirementItem.subProjectTemplate?.id, 'view']">{{
+              requirementItem.subProjectTemplate?.id
+            }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/requirement-item', requirementItem.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

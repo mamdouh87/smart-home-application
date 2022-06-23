@@ -1,0 +1,38 @@
+{
+  "applications": "*",
+  "changelogDate": "20220623175123",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "project_items_requirement",
+  "fields": [
+    {
+      "fieldName": "qtyNo",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "notes",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ProjectItemsRequirement",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "requirementItem",
+      "otherEntityRelationshipName": "projectItemsRequirement",
+      "ownerSide": true,
+      "relationshipName": "requirementItems",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "subProject",
+      "otherEntityRelationshipName": "subProjectItemsReq",
+      "relationshipName": "subProject",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}
