@@ -1,0 +1,98 @@
+
+
+
+entity ProjectTemplate{
+	projectTemplateCode String,
+    projectTemplateNameAr String,
+    projectTemplateNameEn String
+}
+relationship OneToMany{
+	ProjectTemplate {subProjectTemplate} to SubProjectTemplate
+}
+
+entity SubProjectTemplate{
+	projectTemplateCode String,
+    projectTemplateNameAr String,
+    projectTemplateNameEn String,
+}
+relationship OneToMany{
+	SubProjectTemplate {subProjectAttrTemplate} to SubProjectAttrTemplate,
+    SubProjectTemplate {requirementItems} to RequirementItem
+}
+  
+entity SubProjectAttrTemplate{
+	attrCode String,
+    attrCodeNameAr String,
+    attrCodeNameEn String,
+    attrType String
+}
+
+
+entity Project{
+	clientName String,
+    enterDate Instant,
+    location String
+    
+}
+relationship OneToOne{
+	Project {projectTemplate} to ProjectTemplate,
+	Project {buildingType} to BuildingType,
+}
+relationship OneToMany{
+	Project{subProjects} to SubProject
+}
+
+
+entity BuildingType{
+	code String,
+    nameAr String,
+    nameEn String
+}
+entity SubProject{
+	projectTemplateCode String,
+    projectTemplateNameAr String,
+    projectTemplateNameEn String
+}
+relationship OneToMany{
+	SubProject {subProjectAttrs} to SubProjectAttr,
+    SubProject {subProjectItemsReq} to ProjectItemsRequirement
+}
+  
+entity SubProjectAttr{
+	attrCode String,
+    attrCodeNameAr String,
+    attrCodeNameEn String,
+    attrType String,
+    attrValue String
+}
+
+entity HardwareItems{
+	hardwareDescAr String,
+    hardwareDescEn String,
+    supportedQty Integer
+}
+relationship OneToOne{
+	HardwareItems{item} to RequirementItem
+}
+
+entity ProjectItemsRequirement{
+    qtyNo Integer,
+    notes String
+}
+relationship OneToOne{
+	ProjectItemsRequirement{requirementItems} to RequirementItem
+}
+
+entity RequirementItem{
+	sysCode String,
+    code String,
+    descriptionAr String,
+    descriptionEn String
+}
+
+
+paginate * with pagination
+
+service all with serviceClass
+
+dto all with mapstruct
