@@ -1,0 +1,35 @@
+{
+  "applications": "*",
+  "changelogDate": "20220623175115",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "project_template",
+  "fields": [
+    {
+      "fieldName": "projectTemplateCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "projectTemplateNameAr",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "projectTemplateNameEn",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ProjectTemplate",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "subProjectTemplate",
+      "otherEntityRelationshipName": "projectTemplate",
+      "relationshipName": "subProjectTemplate",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

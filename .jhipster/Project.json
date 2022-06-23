@@ -1,0 +1,49 @@
+{
+  "applications": "*",
+  "changelogDate": "20220623175118",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "project",
+  "fields": [
+    {
+      "fieldName": "clientName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "enterDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "location",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Project",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "projectTemplate",
+      "otherEntityRelationshipName": "project",
+      "ownerSide": true,
+      "relationshipName": "projectTemplate",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "buildingType",
+      "otherEntityRelationshipName": "project",
+      "ownerSide": true,
+      "relationshipName": "buildingType",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "subProject",
+      "otherEntityRelationshipName": "project",
+      "relationshipName": "subProjects",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

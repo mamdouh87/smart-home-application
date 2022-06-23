@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="subProject">
+      <h2 data-cy="subProjectDetailsHeading"><span jhiTranslate="smartHomeApplicationApp.subProject.detail.title">Sub Project</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ subProject.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="smartHomeApplicationApp.subProject.projectTemplateCode">Project Template Code</span></dt>
+        <dd>
+          <span>{{ subProject.projectTemplateCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="smartHomeApplicationApp.subProject.projectTemplateNameAr">Project Template Name Ar</span></dt>
+        <dd>
+          <span>{{ subProject.projectTemplateNameAr }}</span>
+        </dd>
+        <dt><span jhiTranslate="smartHomeApplicationApp.subProject.projectTemplateNameEn">Project Template Name En</span></dt>
+        <dd>
+          <span>{{ subProject.projectTemplateNameEn }}</span>
+        </dd>
+        <dt><span jhiTranslate="smartHomeApplicationApp.subProject.project">Project</span></dt>
+        <dd>
+          <div *ngIf="subProject.project">
+            <a [routerLink]="['/project', subProject.project?.id, 'view']">{{ subProject.project?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/sub-project', subProject.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

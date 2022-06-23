@@ -7,6 +7,16 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "الكيانات",
+        "projectTemplate": "Project Template",
+        "subProjectTemplate": "Sub Project Template",
+        "subProjectAttrTemplate": "Sub Project Attr Template",
+        "project": "Project",
+        "buildingType": "Building Type",
+        "subProject": "Sub Project",
+        "subProjectAttr": "Sub Project Attr",
+        "hardwareItems": "Hardware Items",
+        "projectItemsRequirement": "Project Items Requirement",
+        "requirementItem": "Requirement Item",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

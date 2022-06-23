@@ -1,0 +1,43 @@
+{
+  "applications": "*",
+  "changelogDate": "20220623175121",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "sub_project_attr",
+  "fields": [
+    {
+      "fieldName": "attrCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "attrCodeNameAr",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "attrCodeNameEn",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "attrType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "attrValue",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "SubProjectAttr",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "subProject",
+      "otherEntityRelationshipName": "subProjectAttrs",
+      "relationshipName": "subProject",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

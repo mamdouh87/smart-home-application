@@ -1,0 +1,26 @@
+{
+  "smartHomeApplicationApp": {
+    "buildingType": {
+      "home": {
+        "title": "Building Types",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Building Type",
+        "createOrEditLabel": "Create or edit a Building Type",
+        "notFound": "No Building Types found"
+      },
+      "created": "A new Building Type is created with identifier {{ param }}",
+      "updated": "A Building Type is updated with identifier {{ param }}",
+      "deleted": "A Building Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Building Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Building Type"
+      },
+      "id": "ID",
+      "code": "Code",
+      "nameAr": "Name Ar",
+      "nameEn": "Name En"
+    }
+  }
+}

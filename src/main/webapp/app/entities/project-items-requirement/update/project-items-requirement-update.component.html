@@ -1,0 +1,93 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-project-items-requirement-heading"
+        data-cy="ProjectItemsRequirementCreateUpdateHeading"
+        jhiTranslate="smartHomeApplicationApp.projectItemsRequirement.home.createOrEditLabel"
+      >
+        Create or edit a Project Items Requirement
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="smartHomeApplicationApp.projectItemsRequirement.qtyNo" for="field_qtyNo">Qty No</label>
+          <input type="number" class="form-control" name="qtyNo" id="field_qtyNo" data-cy="qtyNo" formControlName="qtyNo" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="smartHomeApplicationApp.projectItemsRequirement.notes" for="field_notes">Notes</label>
+          <input type="text" class="form-control" name="notes" id="field_notes" data-cy="notes" formControlName="notes" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="smartHomeApplicationApp.projectItemsRequirement.requirementItems"
+            for="field_requirementItems"
+            >Requirement Items</label
+          >
+          <select
+            class="form-control"
+            id="field_requirementItems"
+            data-cy="requirementItems"
+            name="requirementItems"
+            formControlName="requirementItems"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                requirementItemOption.id === editForm.get('requirementItems')!.value?.id
+                  ? editForm.get('requirementItems')!.value
+                  : requirementItemOption
+              "
+              *ngFor="let requirementItemOption of requirementItemsCollection; trackBy: trackRequirementItemById"
+            >
+              {{ requirementItemOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="smartHomeApplicationApp.projectItemsRequirement.subProject" for="field_subProject"
+            >Sub Project</label
+          >
+          <select class="form-control" id="field_subProject" data-cy="subProject" name="subProject" formControlName="subProject">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                subProjectOption.id === editForm.get('subProject')!.value?.id ? editForm.get('subProject')!.value : subProjectOption
+              "
+              *ngFor="let subProjectOption of subProjectsSharedCollection; trackBy: trackSubProjectById"
+            >
+              {{ subProjectOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

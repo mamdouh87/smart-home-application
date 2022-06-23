@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="projectItemsRequirement">
+      <h2 data-cy="projectItemsRequirementDetailsHeading">
+        <span jhiTranslate="smartHomeApplicationApp.projectItemsRequirement.detail.title">Project Items Requirement</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ projectItemsRequirement.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="smartHomeApplicationApp.projectItemsRequirement.qtyNo">Qty No</span></dt>
+        <dd>
+          <span>{{ projectItemsRequirement.qtyNo }}</span>
+        </dd>
+        <dt><span jhiTranslate="smartHomeApplicationApp.projectItemsRequirement.notes">Notes</span></dt>
+        <dd>
+          <span>{{ projectItemsRequirement.notes }}</span>
+        </dd>
+        <dt><span jhiTranslate="smartHomeApplicationApp.projectItemsRequirement.requirementItems">Requirement Items</span></dt>
+        <dd>
+          <div *ngIf="projectItemsRequirement.requirementItems">
+            <a [routerLink]="['/requirement-item', projectItemsRequirement.requirementItems?.id, 'view']">{{
+              projectItemsRequirement.requirementItems?.id
+            }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="smartHomeApplicationApp.projectItemsRequirement.subProject">Sub Project</span></dt>
+        <dd>
+          <div *ngIf="projectItemsRequirement.subProject">
+            <a [routerLink]="['/sub-project', projectItemsRequirement.subProject?.id, 'view']">{{
+              projectItemsRequirement.subProject?.id
+            }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/project-items-requirement', projectItemsRequirement.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

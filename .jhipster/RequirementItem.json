@@ -1,0 +1,39 @@
+{
+  "applications": "*",
+  "changelogDate": "20220623175124",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "requirement_item",
+  "fields": [
+    {
+      "fieldName": "sysCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "descriptionAr",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "descriptionEn",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "RequirementItem",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "subProjectTemplate",
+      "otherEntityRelationshipName": "requirementItems",
+      "relationshipName": "subProjectTemplate",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

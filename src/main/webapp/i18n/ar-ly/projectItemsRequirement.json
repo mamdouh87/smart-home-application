@@ -1,0 +1,27 @@
+{
+  "smartHomeApplicationApp": {
+    "projectItemsRequirement": {
+      "home": {
+        "title": "Project Items Requirements",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Project Items Requirement",
+        "createOrEditLabel": "Create or edit a Project Items Requirement",
+        "notFound": "No Project Items Requirements found"
+      },
+      "created": "A new Project Items Requirement is created with identifier {{ param }}",
+      "updated": "A Project Items Requirement is updated with identifier {{ param }}",
+      "deleted": "A Project Items Requirement is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Project Items Requirement {{ id }}?"
+      },
+      "detail": {
+        "title": "Project Items Requirement"
+      },
+      "id": "ID",
+      "qtyNo": "Qty No",
+      "notes": "Notes",
+      "requirementItems": "Requirement Items",
+      "subProject": "Sub Project"
+    }
+  }
+}
